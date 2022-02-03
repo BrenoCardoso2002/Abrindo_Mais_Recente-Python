@@ -19,6 +19,11 @@ ListaComDatas.sort(reverse=True) # ordena a lista em ordem decrescente
 ultimo_arquivo = ListaComDatas[0] # obtem o primeiro elemento da lista
 ultimo_arquivo = ultimo_arquivo[1] # obtem apenas o nome da dupla de dados obtidos
 
+# verifica se o arquivo mais recente não é o arquivo python:
+ArqPython =  os.path.basename( __file__) # Obtem o nome do arquivo python
+if ultimo_arquivo == ArqPython:
+    exit() # finaliza o programa
+
 # Trecho que executa o arquivo mais recente:
 pyautogui.PAUSE = 1 # define o intervalo de tempo entre cada comando pyautogui
 pyautogui.hotkey("win", "r") # clica no botão windows + r, para abrir o executar do windows
